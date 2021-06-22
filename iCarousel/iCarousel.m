@@ -2032,6 +2032,8 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
                 (self.vertical && scrollView.contentSize.height <= scrollView.frame.size.height) ||
                 (!self.vertical && scrollView.contentSize.width <= scrollView.frame.size.width);
             }
+            Class yylab = NSClassFromString(@"YYLabel");
+            if (yylab && [self viewOrSuperview:touch.view ofClass:yylab]) return YES;
             if ([self viewOrSuperview:touch.view ofClass:[UIButton class]] ||
                 [self viewOrSuperview:touch.view ofClass:[UIBarButtonItem class]])
             {
